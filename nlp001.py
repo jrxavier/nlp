@@ -1,3 +1,4 @@
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from textblob import TextBlob
 from nltk.stem import PorterStemmer
 from nltk.stem import WordNetLemmatizer
@@ -77,3 +78,16 @@ print("Machine Translator")
 languages = ['en', 'fr', 'es']
 for language in languages:
     print(TextBlob("Quem disse que tradução não é divertido?").translate(to=language))
+
+
+"""POS Tagging com TextBlob
+"""
+tags = TextBlob("The global economy is expected to grow this year").tags
+print(tags)
+
+"""VADER: lexicon-based sentimental analyzis tool, including colloquial language terms, emoticons, slang, acronysm, etc
+"""
+
+analyzer = SentimentIntensityAnalyzer()
+retorno = analyzer.polarity_scores("OMG ! This book is so cool")
+print(retorno)
