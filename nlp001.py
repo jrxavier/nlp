@@ -69,3 +69,11 @@ nltk.download('tagsets')
 
 eval = TextBlob("I love pizza").sentiment
 print(eval)
+
+
+"""Machine Translator
+"""
+print("Machine Translator")
+languages = ['en', 'fr', 'es']
+for language in languages:
+    print(TextBlob("Quem disse que tradução não é divertido?").translate(to=language))
